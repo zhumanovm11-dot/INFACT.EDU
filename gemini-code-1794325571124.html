@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFACT EDU — Оқу орталығы | Алматы</title>
+    <meta name="description" content="INFACT EDU білім беру орталығы: Мектепке даярлық, продленка, ағылшын тілі, математика, ораторлық өнер және ҰБТ-ға дайындық.">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --accent: #FF6B6B;
+            --secondary: #0D9488;
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(255, 107, 107, 0.4);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: #DBEAFE;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #0F172A;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #475569;
+        }
+
+        .format-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: white;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid #E2E8F0;
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: #0F172A;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #F1F5F9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-top: 1rem;
+        }
+
+        .ubt-section {
+            background: #F0FDF4;
+            border-radius: 24px;
+            padding: 3rem 1.5rem;
+            margin: 4rem auto;
+            max-width: 1200px;
+            border: 2px dashed var(--secondary);
+        }
+
+        .form-container {
+            background: white;
+            max-width: 550px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #0F172A;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        footer a {
+            color: #38BDF8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">INFACT<span>.EDU</span></a>
+            <a href="#register" class="btn">Жазылу</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="hero-badge">🎁 Бесплатная консультация және байқау сабағы</span>
+        <h1>INFACT EDU — Балаңыздың сапалы білімі мен болашағы!</h1>
+        <p>Мектепке даярлық, сапалы продленка, тілдер және ҰБТ-ға дайындық орталығы.</p>
+        
+        <div class="format-tags">
+            <span class="tag">📍 Оффлайн сабақтар</span>
+            <span class="tag">💻 Онлайн форматы</span>
+        </div>
+
+        <a href="#register" class="btn">Тегін сынақ сабағына жазылу</a>
+    </section>
+
+    <!-- Негізгі курстар -->
+    <section class="services">
+        <h2 class="section-title">Балаларға арналған курстар</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3>🎒 Мектепке даярлық</h3>
+                    <p>Оқу, жазу, сану, логика және мектепке психологиялық дайындық.</p>
+                </div>
+                <div class="price">30 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>📚 Продленка (Ұзартылған күн)</h3>
+                    <p>Үй тапсырмасын орындау, түсінбеген тақырыптарды қайталау.</p>
+                </div>
+                <div class="price">40 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>🇬🇧 Ағылшын тілі</h3>
+                    <p>Сөйлеу, грамматика, сөздік қор және интерактивті сабақтар.</p>
+                </div>
+                <div class="price">35 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>📐 Математика</h3>
+                    <p>Логикалық ойлау, мектеп бағдарламасы бойынша білімді тереңдету.</p>
+                </div>
+                <div class="price">35 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>🗣️ Ораторлық өнер</h3>
+                    <p>Өзін сенімді ұстау, аудитория алдында сөйлеу және шешендік.</p>
+                </div>
+                <div class="price">20 000 ₸ / ай</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ҰБТ Бөлімі -->
+    <section class="ubt-section">
+        <h2 class="section-title" style="color: var(--secondary);">🎓 ҰБТ-ға дайындық бөлімі</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <h3>🇬🇧 Ағылшын тілі (ҰБТ)</h3>
+                    <p>Тест спецификасы, грамматикалық база және логикалық тапсырмалар.</p>
+                </div>
+                <div class="price">35 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>📖 Қазақ тілі мен Әдебиеті</h3>
+                    <p>Ережелерді жаттаусыз ұғу, мәтінмен жұмыс және талдау.</p>
+                </div>
+                <div class="price">35 000 ₸ / ай</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>📝 Қаз.Тестке дайындық</h3>
+                    <p>ҚазТест форматы бойынша интенсивті дайындық бағдарламасы.</p>
+                </div>
+                <div class="price">35 000 ₸ / ай</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма -->
+    <section class="form-container" id="register">
+        <h2 style="text-align: center; margin-bottom: 1.5rem;">Сабаққа немесе консультацияға жазылу</h2>
+        <form id="whatsappForm">
+            <div class="form-group">
+                <label for="name">Ата-ананың / Оқушының аты:</label>
+                <input type="text" id="name" required placeholder="Мысалы: Арман">
+            </div>
+            <div class="form-group">
+                <label for="course">Курсты таңдаңыз:</label>
+                <select id="course">
+                    <option>Мектепке даярлық (30.000 ₸)</option>
+                    <option>Продленка (40.000 ₸)</option>
+                    <option>Ағылшын тілі (35.000 ₸)</option>
+                    <option>Математика (35.000 ₸)</option>
+                    <option>Ораторлық өнер (20.000 ₸)</option>
+                    <option>ҰБТ: Ағылшын тілі (35.000 ₸)</option>
+                    <option>ҰБТ: Қазақ тілі мен Әдебиеті (35.000 ₸)</option>
+                    <option>Қаз.Тестке дайындық (35.000 ₸)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="format">Оқу форматы:</label>
+                <select id="format">
+                    <option>Оффлайн (Орталықта)</option>
+                    <option>Онлайн</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">WhatsApp арқылы жазылу</button>
+        </form>
+    </section>
+
+    <footer>
+        <p><strong>INFACT EDU білім беру орталығы</strong></p>
+        <p>📍 Мекен-жайы: Алматы қ., ЖК ALMA CITY, Жүнісова 12/8</p>
+        <p>📞 Байланыс телефоны: <a href="tel:+77073290515">8 707 329 0515</a></p>
+        <br>
+        <p style="font-size: 0.85rem; color: #94A3B8;">&copy; 2026 INFACT EDU. Барлық құқықтар қорғалған.</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const course = document.getElementById('course').value;
+            const format = document.getElementById('format').value;
+            
+            const message = `Саламатсыз ба! Мен INFACT EDU сайтынан өтінім қалдырып тұрмын.%0A%0A👤 *Аты:* ${name}%0A📚 *Курс:* ${course}%0A💻 *Формат:* ${format}%0A🎁 *Тегін сынақ сабағына жазылғым келеді.*`;
+            
+            window.open(`https://wa.me/77073290515?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
